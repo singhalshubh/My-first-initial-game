@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>task 2</title>
+</head>
+<body onload="startTime()">
+
+<canvas id="mycanvas" width="1500" height="1500" style="background-color:#eee"></canvas>
+<button onmousemove="up()" style="background-color: blue">up</button>
+<button onmousemove="down()" style="background-color: blue">down</button>
+<button onmousemove="left()" style="background-color: blue">left</button>
+<button  onmousemove="right()" style="background-color: blue">right</button>
+<button onclick="alert('The game is about navigation. Game would be over means you will have to change your last step.Once you reach the rectangular position down you will win.')" style="background-color: yellow">Help</button>     
+
+<footer>
+  Made By Delta Force
+</footer>
+
+<script type="text/javascript">
+  
+   function d(){  alert("Game over");location.reload(true);}
+      setInterval(d,10002);
+   var c=document.getElementById('mycanvas');
+      var ctx=c.getContext("2d");
+      var ctx1=ctx;
+      
+      ctx.fillRect(0,0,480,400);
+      ctx.fillRect(560,0,900,125);
+      ctx.fillRect(1400,0,140,870);
+      ctx.fillRect(0,400,140,250);
+      ctx.fillRect(1400,800,-1100,70);
+      ctx.fillRect(0,650,1230,90);
+      ctx.fillRect(800,650,400,-100); 
+      ctx.fillRect(1200,650,30,-485);
+      ctx.fillRect(200,470,800,-30);
+      ctx.fillRect(550,470,470,-299);
+      ctx.fillRect(305,760,30,30);
+      function startTime() {
+    var today = new Date();
+    
+    var s = today.getSeconds();
+    
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+    
+      
+       var x=c.width/3;
+       var y=c.height/100;
+       
+       ctx1.fillRect(x,y,30,30);
+       var rect1 = {t: 305}
+    
+
+    function up()
+    {  ctx.clearRect(0,0,c.width,c.height);
+      
+      
+      ctx.fillRect(0,0,480,400);
+      ctx.fillRect(560,0,900,125);
+      ctx.fillRect(1400,0,140,870);
+      ctx.fillRect(0,400,140,250);
+      ctx.fillRect(1400,800,-1100,70);
+      ctx.fillRect(0,650,1230,90);
+      ctx.fillRect(800,650,400,-100); 
+      ctx.fillRect(1200,650,30,-485); 
+      ctx.fillRect(200,470,800,-30);
+      ctx.fillRect(550,470,470,-299);
+      ctx.fillRect(305,760,30,30);
+        function startTime() {
+    var today = new Date();
+    
+    var s = today.getSeconds();
+    
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+      
+      if(0<y<125 && 480<x<560)
+      { if(y<0)
+      alert("Game over"); 
+    
+       else
+      y=y-10;}
+    else if(140<x<450 && 400<y<470){
+       if(y<370)
+        alert("Game over");
+        else
+          y=y-10;}
+      
+      else if(200<x<550&&y<650)
+        { if(y<570)
+          alert("Game over");
+        else
+          y=y-10;
+        }
+       
+       else if(800<x<1200 && 500<y<550)
+        { if(y<500||y>550)
+        alert("Game over");
+        else
+          y=y-10;}
+        else if(560<x<1400&&125<y<200)
+          { if(y<125||y>200)
+          alert("Game over");
+        else
+          y=y-10;}
+        else if(300<x<1400&&740<y<800)
+          { if(y<740||y>800)
+          alert("Game over");
+        else
+          y=y-10;}
+           
+       
+
+
+  
+
+      ctx.fillRect(x,y,10,10);
+    }
+     function down()
+    {  ctx.clearRect(0,0,c.width,c.height);
+      
+      
+      ctx.fillRect(0,0,480,400);
+      ctx.fillRect(560,0,900,125);
+      ctx.fillRect(1400,0,140,870);
+      ctx.fillRect(0,400,140,250);
+      ctx.fillRect(1400,800,-1100,70);
+      ctx.fillRect(0,650,1230,90);
+      ctx.fillRect(800,650,400,-100); 
+      ctx.fillRect(1200,650,30,-485); 
+      ctx.fillRect(200,470,800,-30);
+      ctx.fillRect(550,470,470,-299);
+      ctx.fillRect(305,760,30,30);
+        function startTime() {
+    var today = new Date();
+    
+    var s = today.getSeconds();
+    
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+       
+
+       if( 400<y<470&&x<400)
+        { if(y>470&&x<470)
+          alert("Game over");
+        else
+          y=y+10;}
+        else if(x<870&&500<y<620)
+          { if(y>650)
+          alert("Game over");
+        else
+          y=y+10;}
+        else if(x<1200 && 500<y<550)
+          { if(y>550)
+          alert("Game over");
+        else
+          y=y+10;}
+        else if(300<x<1200&&740<y<800)
+          { if(y>800)
+          alert("Game over");
+        else
+          y=y+10;
+      }
+      else if(x<1000&&160<y)
+        { if(y>150)
+           alert("Game over");
+        else
+          y=y+10;
+        }
+        
+
+      ctx.fillRect(x,y,30,30);}
+
+      function left()
+      { 
+        ctx.clearRect(0,0,c.width,c.height);
+      
+      
+      ctx.fillRect(0,0,480,400);
+      ctx.fillRect(560,0,900,125);
+      ctx.fillRect(1400,0,140,870);
+      ctx.fillRect(0,400,140,250);
+      ctx.fillRect(1400,800,-1100,70);
+      ctx.fillRect(0,650,1230,90);
+      ctx.fillRect(800,650,400,-100); 
+      ctx.fillRect(1200,650,30,-485); 
+      ctx.fillRect(200,470,800,-30);
+      ctx.fillRect(550,470,470,-299);
+      ctx.fillRect(305,760,30,30);
+        function startTime() {
+    var today = new Date();
+    
+    var s = today.getSeconds();
+    
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+      
+         if(480<x<560&&y<390)
+          { if(x<480)
+            
+        alert("Game over");
+        else
+          x=x-10;
+          }
+        else if(140<x<200&&400<y<650)
+          { if(x<140)
+          alert("Game over");
+        else
+          x=x-10;}
+        else if(300<y<500 &&1000<x<1200)
+          {if(x<1000)
+          alert("Game over");
+        else
+          x=x-10;}
+        else if(1290<x<1400&&288<y<650)
+          { if(x<1290)
+          alert("Game over");
+        else
+          x=x-10;}
+      for(i=0;i<1;i++){
+      if(x-rect1.t<0 && y>650){ alert("Successfully completed. You are the winner of this level."); 
+        var a = document.createElement('a');
+var linkText = document.createTextNode("Go to next level");
+a.appendChild(linkText);
+a.title = "Go to next level";
+a.href = "practice.html";
+document.body.appendChild(a);
+x=x-1000;}
+}
+
+        ctx.fillRect(x,y,10,10);}
+        
+
+
+        function right()
+        {  ctx.clearRect(0,0,c.width,c.height);
+      
+      
+      ctx.fillRect(0,0,480,400);
+      ctx.fillRect(560,0,900,125);
+      ctx.fillRect(1400,0,140,870);
+      ctx.fillRect(0,400,140,250);
+      ctx.fillRect(1400,800,-1100,70);
+      ctx.fillRect(0,650,1230,90);
+      ctx.fillRect(800,650,400,-100); 
+      ctx.fillRect(1200,650,30,-485); 
+      ctx.fillRect(200,470,800,-30);
+      ctx.fillRect(550,470,470,-299);
+      ctx.fillRect(305,760,30,30);
+        function startTime() {
+    var today = new Date();
+    
+    var s = today.getSeconds();
+    
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+       if(y<80)
+        { if(x>600)
+        alert("game over");
+        else
+          x=x+10;}
+        else if(450<x<530&&205<y)
+          { if(x>560)
+          alert("game over");
+        else
+          x=x+10;}
+        else if(x<200)
+          { if(x>200)
+          alert("game over");
+        else
+          x=x+10;}
+        else if(200<x<800&&500<y<650)
+          { if(x>1400)
+          alert("game over");
+        else
+          x=x+10;}
+        else if(800<x<1200&&500<y<550)
+          { if(x>1200)
+          alert("game over");
+        else
+          x=x+10;}
+        else if(1000<x<1200&&300<y<550)
+          { if(x>1200)
+          alert("game over");
+        else
+          x=x+10;}
+        else if(1349<x<1400&&125<y<800)
+          { if(x>1400)
+          alert("game over");
+        else
+          x=x+10;}
+       
+
+ctx.fillRect(x,y,10,10);}
+
+
+
+
+
+
+
+
+
+</script>
+<audio controls autoplay>
+  <source src="music.ogg" type="audio/ogg">
+  <source src="music.mp3" type="audio/mpeg">
+  
+</audio>
+<div id="txt"></div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+  
+
+
+
+
